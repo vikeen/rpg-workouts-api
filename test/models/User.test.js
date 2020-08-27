@@ -1,5 +1,6 @@
 import {expect} from "chai"
 import User from "../../src/models/User";
+import {UserFactory} from "../factories";
 import {validate_presence_of} from "../assertions";
 
 
@@ -11,14 +12,7 @@ describe('models.user', function () {
     it('should require password', () => validate_presence_of(User, "password"))
 
     it ('should add a combined name fields', async function() {
-        const user = await User.create({
-            username: "john.doe",
-            firstName: "John",
-            lastName: "Doe",
-            email: "john.doe@gmail.com",
-            password: "password"
-        })
-
+        const user = await UserFactory.create({firstName: "John", lastName: "Doe"})
         expect(user.name).to.equal("John Doe")
     })
 })
