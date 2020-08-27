@@ -7,7 +7,7 @@ import userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 
 const server = restify.createServer({
-    name: 'rpg-workouts',
+    name: 'rpg_workouts',
     version: '1.0.0'
 })
 
@@ -23,7 +23,7 @@ server.use(restify.plugins.queryParser())
 server.use(restify.plugins.bodyParser())
 server.use(cors.actual)
 
-mongoose.connect('mongodb://localhost/rpg-workouts', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/rpg_workouts', {useNewUrlParser: true})
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {

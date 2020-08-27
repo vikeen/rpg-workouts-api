@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "build": "mkdir dist && babel src -s -d dist",
-    "dev": "nodemon --exec npm run babel-node -- ./index.js"
+    "test": "mocha --file ./test/setup.js --require @babel/register test/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
     "dotenv": "^8.2.0",
+    "mocha": "^8.1.2",
     "mongoose": "^5.10.0",
     "restify": "^8.5.1",
     "restify-cors-middleware": "^1.1.1",
@@ -23,6 +24,9 @@
     "restify-mongoose": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
     "nodemon": "^2.0.4"
   }
 }
