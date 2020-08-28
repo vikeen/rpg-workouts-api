@@ -1,10 +1,10 @@
+import server from '../src/server'
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 before(async () => {
-    await mongoose.connect('mongodb://localhost/rpg_workouts_test', {
-        useNewUrlParser: true
-    });
+    await server.start()
 })
 
 afterEach(async () => {
@@ -13,5 +13,5 @@ afterEach(async () => {
 });
 
 after(async () => {
-    await mongoose.disconnect()
+    await server.stop()
 })

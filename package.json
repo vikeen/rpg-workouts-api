@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "build": "mkdir dist && babel src -s -d dist",
-    "test": "mocha --file ./test/setup.js --require @babel/register test/**/*.js"
+    "test": "DATABASE_URL=mongodb://localhost/rpg_workouts_test PORT=80 NODE_ENV=test mocha --file ./test/setup.js --require @babel/register test/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "mocha": "^8.1.2",
     "mongoose": "^5.10.0",

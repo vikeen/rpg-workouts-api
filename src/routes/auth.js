@@ -1,4 +1,4 @@
-import {InternalServerError, BadRequestError} from 'restify-errors'
+import {InternalServerError} from 'restify-errors'
 import User from "../models/User";
 
 const authRoutes = {
