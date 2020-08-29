@@ -5,6 +5,6 @@ export const validate_presence_of = async (model, key) => {
         await model.create({});
         expect.fail(`Expected '${model.modelName}' model to require field '${key}', but could not confirm`);
     } catch (e) {
-        expect(e.errors[key].message).to.include(`\`${key}\` is required`)
+        expect(e.errors[key].message).to.equal(`\`${key}\` can't be blank`)
     }
 }

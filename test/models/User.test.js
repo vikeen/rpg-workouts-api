@@ -1,7 +1,7 @@
 import {expect} from "chai"
 import User from "../../src/models/User";
 import {UserFactory} from "../factories";
-import {validate_presence_of, validate_unique} from "../assertions";
+import {validate_presence_of} from "../assertions";
 
 
 describe('models.user', function () {
