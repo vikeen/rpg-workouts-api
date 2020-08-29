@@ -12,6 +12,8 @@ export default {
 function buildData(data = {}) {
     return {
         username: "john.rake",
+        firstName: "John",
+        lastName: "Rake",
         email: "john@gorillabotlabs.com",
         password: "password",
         ...data
