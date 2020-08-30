@@ -35,4 +35,9 @@ describe('models.user', function () {
             expect(e.message).to.include("expected `email` to be unique")
         }
     })
+
+    it('should hide password from json serialization', async () => {
+        const user = await UserFactory.create({password: "password"})
+        expect(user.toJSON().password).to.equal(undefined)
+    })
 })
